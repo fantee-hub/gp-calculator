@@ -61,7 +61,7 @@ function calculateGrade(){
     const unitValue=parseInt(units[i].value);
     sum= sum + unitValue;
   }
-  console.log(sum)
+  
 
   const gradeList=document.querySelectorAll('.grades');
   // create an empty array for grade
@@ -69,7 +69,6 @@ function calculateGrade(){
   const gradeArr=[];
   for(let i=0; i<gradeList.length; i++){
     gradeArr.push(gradeList[i].value); 
-    console.log(gradeList[i].value);
 
   gradeArr[i]=checkGrades(gradeList[i].value.toUpperCase());
   }
@@ -79,31 +78,21 @@ function calculateGrade(){
   for (let i=0; i<length; i++){
     total += arr[i] * gradeArr[i];
     gradeUnitSum=gradeUnitSum + total;
-  }
-  console.log(gradeUnitSum)
-  console.log(total);
-
- 
-  
+  }  
   const gpGrade=parseFloat((total / sum).toFixed(2));
-  console.log(gpGrade);
-
-
-  if(isNaN(gpGrade)===true){
-    alert(`please fill in the fields`);
-
+  if(isFinite(gpGrade)){
+    const result = document.getElementById('result');
+    result.textContent=`Your Grade Point Is: ${gpGrade}`
+  }else{
+    error('Please enter a valid grade','error');
+   
   }
   
- const result = document.getElementById('result');
-  result.textContent=`Your Grade Point Is: ${gpGrade}`
+
 // show result
   document.getElementById('result').style.display='block';
   //hide spiner
   document.querySelector('.loader').style.display='none'
-  
-  console.log(gradeArr)
-  console.log(arr);
-  
 }
 
 function checkGrades(grade){
@@ -129,3 +118,19 @@ function checkGrades(grade){
  }
 }
 
+function error(msg,error){
+  const errorDiv=document.createElement('div');
+  errorDiv.className=`alert ${error}`;
+  //errorDiv.textContent=`${msg}`;
+  errorDiv.appendChild(document.createTextNode(msg))
+  const formCont=document.querySelector('#gp-form');
+  const rowCont=document.querySelector('.row');
+
+  formCont.insertBefore(errorDiv,rowCont);
+
+  setTimeout(clearError,3000);
+   
+}
+function clearError(){
+  document.querySelector('.alert').remove();
+}
