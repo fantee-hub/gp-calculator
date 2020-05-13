@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GP calculator</title>
+  
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <div class="container">
+    <div class="heading">
+      <h1>Gp Calculator</h1>
+    </div>
+  <form id="gp-form">
+    <div class="row">
+      <div class="column1">
+        <label for="" id="course-code">Enter Course</label><br>
+        <input type="text" name="course" id="course-1" placeholder="Enter Course" ><br>
+        <input type="text" name="course" id="course-2" placeholder="Enter Course"><br>
+        <input type="text" name="course" id="course-3" placeholder="Enter Course"><br>
+        <span id="courseSpan"></span>
+      </div>
+      <div class="column2">
+        <label for="" id="course-unit">Enter Course Unit</label><br>
+        <input type="number" name="unit" id="unit-1" placeholder="Enter Unit" class="units"><br>
+        <input type="number" name="unit" id="unit-2" placeholder="Enter Unit" class="units"><br>
+        <input type="number" name="unit" id="unit-3" placeholder="Enter Unit" class="units"><br>
+        <span id="unit-4"></span>
+      </div>
+      <div class="column3">
+        <label for="" id="course-grade">Enter Grade</label><br>
+        <input type="text" name="grade" id="grade-1" placeholder="Enter Grade" class="grades"><br>
+        <input type="text" name="grade" id="grade-2" placeholder="Enter Grade" class="grades"><br>
+        <input type="text" name="grade" id="grade-3" placeholder="Enter Grade" class="grades"><br>
+        <span id="grade-4"></span>
+      </div>
+    </div>
+    
+  </form>
+  <input type="button" id="add-course" value="Add Course">
+  <div class="buttons">
+    <input type="button" id="calculate-grade" value="Calculate Grade">
+    </div>
+    <div class="loader">
+      <img src="ee5eaba393614b5e-pehliseedhi-suitable-candidate-suitable-job.gif" alt="" widgth="100" height="100">
+    </div>
+    <div class="finalResult">
+      <h1 id="result" class="result"></h1>
+    </div>
+  <script src="app.js"></script>
+</body>
+<footer>
+  Copyright &#169; 2020, King Kunmi. All Rights Reserved.
+</footer>
+</html>
