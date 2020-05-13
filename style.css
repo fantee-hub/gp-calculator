@@ -89,6 +89,12 @@ background: #1a506f;
 .loader{
   display:none;
 }
+.error{
+  background: red;
+  color:white;
+  padding:5px 10px;
+  margin:15px;
+}
 footer{
   text-align:center;
   color:#c0c0c0;
